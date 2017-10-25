@@ -27,7 +27,7 @@ export class PeopleServiceProvider {
       //https://api.themoviedb.org/3/search/movie?api_key=f8785f620fd6b030cbe5b2a1002bac1b&query=Jack+Reacher
       //https://www.alaskaair.com/api/v1/AirportsLite/GetAllAirportsLite
       ///discover/movie/remote?language=en&media_type=movie
-      this.http.get('https://api.themoviedb.org/4/list/21245?api_key=f8785f620fd6b030cbe5b2a1002bac1b')
+      this.http.get('https://api.themoviedb.org/3/search/movie?api_key=f8785f620fd6b030cbe5b2a1002bac1b&query=Jack+Reacher')
         .map(res => res.json())
         .subscribe(data => {
           // we've got back the raw data, now generate the core schedule data
