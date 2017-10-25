@@ -1,0 +1,48 @@
+<ion-header>
+    
+      <ion-navbar>
+        <ion-title>{{title | uppercase}}</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content padding text-center>
+    
+    
+      <ion-card>
+        <img src="{{image}}"/>
+        <ion-card-content>
+          <ion-avatar text-right>
+           <p>{{category}}</p>
+          </ion-avatar>
+    
+          <ion-card-title>
+           <h1>{{title | uppercase}} - #{{index}}</h1>
+            </ion-card-title>
+          <p>{{description}}</p>
+          
+        </ion-card-content>
+        <ion-row>
+            <ion-col text-left>
+                <button ion-button clear small 
+                (click)="editThisMovie()"
+                color="light">
+                  <ion-icon name="create" padding-right></ion-icon>Edit this movie</button>
+              </ion-col>
+          </ion-row>
+          <ion-row>      
+            <ion-col text-right>
+              <button ion-button clear small 
+              (click)="onClose(true)"
+              color="danger">
+                <ion-icon name="trash" padding-right></ion-icon>Remove from my list</button>
+            </ion-col>
+          </ion-row>
+      </ion-card>
+    
+    
+      <button ion-button clear small color="secondary" (click)="onClose()"><ion-icon name="close" padding-right></ion-icon>Close</button>
+      
+    </ion-content>
+    

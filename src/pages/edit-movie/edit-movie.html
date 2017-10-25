@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ mode }} Movie</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input 
+        type="text"
+        formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Description</ion-label>
+          <ion-textarea 
+          type="text"
+          formControlName="description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Poster</ion-label>
+          <ion-textarea 
+          type="text"
+          formControlName="image"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Category</ion-label>
+          <ion-select 
+          formControlName="category">
+            <ion-option *ngFor="let option of selectOptions" [value]='option'>{{ option }}</ion-option>
+          </ion-select>
+      </ion-item>
+    </ion-list>
+    <button type="submit" ion-button block [disabled]="!movieForm.valid">{{mode}} Movie</button>
+  </form>
+</ion-content>

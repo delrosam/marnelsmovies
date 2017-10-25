@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onNewMovie()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Movies</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h2>My Movies</h2>
+    <ion-searchbar></ion-searchbar>
+    <ion-list>
+        <ion-item-sliding *ngFor="let movie of people">
+          <ion-item >
+            <ion-avatar item-start>
+              <img src='https://image.tmdb.org/t/p/w500{{movie.poster_path}}'>
+            </ion-avatar>
+            <h2>{{movie.title}}</h2>
+            <p>{{movie.popularity}} - {{movie.id}}</p>
+          </ion-item>
+          
+          <ion-item-options>
+              <button ion-button color="danger">
+                <ion-icon name="trash"></ion-icon>
+                Delete
+              </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+      </ion-list>
+
+</ion-content>
+
